@@ -5,29 +5,30 @@
 #4. Exit
 #------------------------
 
-# suzdavane na opciite
-
+# Adding new note
 def add_new_task(message:str, tasks:list):
-    tasks.append(message )
+    tasks.append(message)
     print("New Note added!")
 
-
+#Showing all notes
 def show_tasks(tasks:list):
     counter = 1
     for task in tasks:
         print(f"{counter}: {task}")
         counter+=1
-
+#Marking a note as done
 def mark_as_done(index:int, tasks:list):
     message = tasks[index-1]
     if "✔" not in message:
         tasks[index-1] += " ✔"
 
+#Creating the options that the user is going to see
 options = (
             "1.Add new task",
             "2.Show tasks" ,
             "3.Mark task as done",
             "4.Exit" )
+
 notes = []
 print(options)
 choice = int(input("Enter a choice? 1/2/3/4: "))
